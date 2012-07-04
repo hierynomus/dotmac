@@ -1,0 +1,18 @@
+[user]
+	name = hierynomus
+	email = jeroen@hierynomus.com
+[alias]
+	st = status -s
+	ci = commit
+	co = checkout
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset --%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
+[color]
+	status = auto
+	diff = auto
+
+[push]
+	default = tracking
+[core]
+	excludesfile = /Users/ajvanerp/.gitignore_global
+[branch "master"]
+	rebase = true
