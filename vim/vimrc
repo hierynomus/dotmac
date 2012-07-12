@@ -36,7 +36,8 @@ set tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 set incsearch hlsearch
 
 " Display tabs and trailing spaces visually
-set list listchars=tab:\ \ ,trail:·
+set list listchars=tab:»·,trail:·
+highlight SpecialKey term=none cterm=none ctermfg=240
 
 " ================ Completion =======================
 set wildmode=list:longest
