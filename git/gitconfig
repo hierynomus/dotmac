@@ -1,30 +1,21 @@
 [user]
     name = hierynomus
     email = jeroen@hierynomus.com
-[github]
-    user = hierynomus
-    token = b85a5e56a8322f5da8d2616cadfb0070
 [alias]
     st = status -s
     ci = commit
     co = checkout
     lg = log --color --graph --pretty=format:'%Cred%h%Creset --%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
+    ribbon = tag --force _ribbon origin/master
+    catchup = log --patch --reverse --topo-order _ribbon..origin/master
 [color]
     ui = true
     status = auto
     diff = auto
-
 [push]
     default = tracking
 [core]
     excludesfile = /Users/ajvanerp/.gitignore_global
     whitespace = tab-in-indent,blank-at-eol,tabwidth=4
-[difftool "sourcetree"]
-    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    path = 
-[mergetool "sourcetree"]
-    cmd = /Applications/SourceTree.localized/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-    trustExitCode = true
-
 [branch "master"]
     rebase = true
