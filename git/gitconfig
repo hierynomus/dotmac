@@ -16,6 +16,5 @@
     default = tracking
 [core]
     excludesfile = /Users/ajvanerp/.gitignore_global
-    whitespace = tab-in-indent,blank-at-eol,tabwidth=4
 [branch "master"]
     rebase = true
