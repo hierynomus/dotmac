@@ -47,7 +47,7 @@
     " In your .vimrc.bundles.local file"
     " list only the plugin groups you will use
     if !exists('g:spf13_bundle_groups')
-        let g:spf13_bundle_groups=['general', 'programming', 'ruby', 'python', 'javascript', 'html', 'misc']
+        let g:spf13_bundle_groups=['general', 'programming', 'ruby', 'python', 'javascript', 'html', 'scala', 'misc']
     endif
 
     " To override all the included bundles, put
@@ -123,6 +123,11 @@
     " Ruby
         if count(g:spf13_bundle_groups, 'ruby')
             Bundle 'tpope/vim-rails'
+        endif
+
+    " Scala
+        if count(g:spf13_bundle_groups, 'scala')
+            Bundle 'repos-scala/scala-vundle'
         endif
 
     " Misc
@@ -440,7 +445,7 @@
      " }
 
      " PyMode {
-        let g:pymode_lint_checker = "pyflakes"
+        let g:pymode_lint_checker = ""
      " }
 
      " ctrlp {
