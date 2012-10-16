@@ -48,4 +48,4 @@ zstyle ':prezto:load' pmodule \
 # Auto set to 'off' on dumb terminals.
 zstyle ':prezto:module:prompt' theme 'sorin'
 
-zstyle ':prezto:module:tmux' auto-start 'yes'
+ zstyle ':prezto:module:tmux' auto-start 'yes'

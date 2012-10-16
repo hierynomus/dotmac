@@ -78,6 +78,7 @@ unset path_file
 path=(
   $HOME/bin
   /usr/local/{bin,sbin}
+  /usr/local/Cellar/ruby/1.9.3-p286/bin
   /usr/{bin,sbin}
   /{bin,sbin}
   $path
@@ -104,3 +105,4 @@ export RUBY_HOME=/usr/local/Cellar/ruby/1.9.3-p125
 export GIT_EDITOR='vim'
 export GRADLE_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384M"
 export SBT_OPTS="-Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256m"
+export CATALOG=/Users/ajvanerp/Local\ Cloud/Shared/XebiaLabs/Catalog
