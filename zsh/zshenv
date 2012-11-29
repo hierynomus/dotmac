@@ -100,6 +100,7 @@ if [[ -d "$TMPDIR" ]]; then
   fi
 fi
 
+export GRADLE_HOME=/usr/local/Cellar/gradle/1.2/
 export FLEX_HOME=/usr/local/Cellar/flex_sdk/4.6.0.23201/libexec
 export RUBY_HOME=/usr/local/Cellar/ruby/1.9.3-p125
 export GIT_EDITOR='vim'
