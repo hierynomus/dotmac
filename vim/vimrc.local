@@ -1,0 +1,19 @@
+unlet g:solarized_termcolors
+set background=dark
+colorscheme solarized
+
+set visualbell
+set hidden
+
+set listchars=tab:»·,trail:ϟ,extends:#,nbsp:. " Highlight problematic whitespace
+highlight SpecialKey term=none cterm=none ctermfg=240
+
+set wildignore=*.o,*.obj,*~
+set wildignore+=*vim/backups*
+set wildignore+=*DS_Store*
+set wildignore+=*.png,*.jpg,*.gif
+
+set scrolloff=8 sidescrolloff=15 sidescroll=1"
+
+let g:pymode_lint_checker=""
+
