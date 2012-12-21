@@ -17,3 +17,5 @@ set scrolloff=8 sidescrolloff=15 sidescroll=1"
 
 let g:pymode_lint_checker=""
 
+UnBundle 'myusuf3/numbers.vim'
+UnBundle 'Townk/vim-autoclose'
