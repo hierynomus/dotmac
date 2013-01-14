@@ -22,3 +22,9 @@ bindkey '^R' history-incremental-search-backward
 bindkey '^S' history-incremental-search-forward
 bindkey '^P' history-search-backward
 bindkey '^N' history-search-forward
+
+function git_upgrade_all() {
+    git pull origin &&
+    git submodule update --init --recursive &&
+    git submodule foreach --recursive 'git fetch origin && git checkout `git rev-parse origin/HEAD`'
+}
