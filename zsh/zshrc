@@ -28,3 +28,5 @@ function git_upgrade_all() {
     git submodule update --init --recursive &&
     git submodule foreach --recursive 'git fetch origin && git checkout `git rev-parse origin/HEAD`'
 }
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
