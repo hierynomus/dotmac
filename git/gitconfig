@@ -20,3 +20,5 @@
 	quotepath = false
 [branch "master"]
     rebase = true
+[branch "3.8.x-maintenance"]
+    rebase = true
