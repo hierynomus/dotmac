@@ -18,6 +18,7 @@
 [core]
     excludesfile = /Users/ajvanerp/.gitignore_global
 	quotepath = false
+	autocrlf = input
 [branch "master"]
     rebase = true
 [branch "3.8.x-maintenance"]
