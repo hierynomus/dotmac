@@ -13,7 +13,7 @@ fi
 # Customize to your needs...
 
 alias gitrm="git ls-files -d | xargs git rm"
-alias coffee='for i in `find . -name ".git" -type d -depth 2`; do r=`dirname $i`; echo ">>>>>>> Updating $r <<<<<<<<"; cd $r; git stash && git pull --rebase && git stash pop; cd -; echo "<<<<<<<<<< DONE >>>>>>>>>"; done'
+alias git_pull_all='for i in `find . -name ".git" -type d -depth 2`; do r=`dirname $i`; echo ">>>>>>> Updating $r <<<<<<<<"; cd $r; git stash && git pull --rebase && git stash pop; cd -; echo "<<<<<<<<<< DONE >>>>>>>>>"; done'
 unalias rm
 
 alias -s -- log=vim
