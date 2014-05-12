@@ -19,6 +19,7 @@
     excludesfile = /Users/ajvanerp/.gitignore_global
 	quotepath = false
 	autocrlf = input
+	editor = /Users/ajvanerp/bin/subl -n -w
 [branch "master"]
     rebase = true
 [branch "3.8.x-maintenance"]

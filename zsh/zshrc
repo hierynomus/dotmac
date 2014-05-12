@@ -12,10 +12,16 @@ fi
 
 # Customize to your needs...
 
+alias gu="git-up"
 alias gitrm="git ls-files -d | xargs git rm"
-alias git_pull_all='for i in `find . -name ".git" -type d -depth 2`; do r=`dirname $i`; echo ">>>>>>> Updating $r <<<<<<<<"; cd $r; git stash && git pull --rebase && git stash pop; cd -; echo "<<<<<<<<<< DONE >>>>>>>>>"; done'
+alias git_pull_all='for i in `find . -name ".git" -type d -depth 2`; do r=`dirname $i`; echo "\x1b[31m>>>>>>> Updating $r <<<<<<<<\x1b[0m"; cd $r; git-up; cd -; echo "\x1b[32m<<<<<<<<<< DONE >>>>>>>>>\x1b[0m"; done'
+alias git_pull_all_old='for i in `find . -name ".git" -type d -depth 2`; do r=`dirname $i`; echo "\x1b[31m>>>>>>> Updating $r <<<<<<<<\x1b[0m"; cd $r; git stash --include-untracked -q && git pull -q --rebase && git stash pop -q; cd -; echo "\x1b[32m<<<<<<<<<< DONE >>>>>>>>>\x1b[0m"; done'
+alias git_prune_all='for i in `find . -name ".git" -type d -depth 2`; do r=`dirname $i`; echo ">>>>>>> Pruning $r <<<<<<<<"; cd $r; git remote prune origin; cd -; echo "<<<<<<<<<< DONE >>>>>>>>>"; done'
 unalias rm
 alias vim="subl"
+
+alias java6="export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)"
+alias java7="export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)"
 
 alias -s -- log=vim
 
@@ -31,3 +37,5 @@ function git_upgrade_all() {
 }
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+[ -s "/Users/ajvanerp/.scm_breeze/scm_breeze.sh" ] && source "/Users/ajvanerp/.scm_breeze/scm_breeze.sh"
