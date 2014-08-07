@@ -22,6 +22,7 @@ alias vim="subl"
 
 alias java6="export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)"
 alias java7="export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)"
+alias java8="export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)"
 
 alias -s -- log=vim
 
@@ -39,3 +40,5 @@ function git_upgrade_all() {
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 [ -s "/Users/ajvanerp/.scm_breeze/scm_breeze.sh" ] && source "/Users/ajvanerp/.scm_breeze/scm_breeze.sh"
+
+java7
