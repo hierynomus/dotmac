@@ -40,13 +40,24 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'ruby' \
   'prompt' \
+  'syntax-highlighting' \
   'history-substring-search' \
   'osx' \
   'tmux'
+
+zstyle ':prezto:module:syntax-highlighting' color 'yes'
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+  'main' \
+  'brackets' \
+  'pattern' \
+  'cursor' \
+  'root'
+
+zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
 zstyle ':prezto:module:prompt' theme 'sorin'
 
- zstyle ':prezto:module:tmux' auto-start 'yes'
+zstyle ':prezto:module:tmux:auto-start' local 'yes'
