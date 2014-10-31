@@ -16,7 +16,7 @@
 [push]
     default = tracking
 [core]
-    excludesfile = /Users/ajvanerp/.gitignore_global
+    excludesfile = /opt/boxen/config/git/gitignore
 	quotepath = false
 	autocrlf = input
 	editor = /Users/ajvanerp/bin/subl -n -w
@@ -24,3 +24,9 @@
     rebase = true
 [branch "3.8.x-maintenance"]
     rebase = true
+
+[hub]
+protocol = https
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential

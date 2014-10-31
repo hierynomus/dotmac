@@ -5,6 +5,11 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# Source Boxen
+if [[ -s "/opt/boxen/env.sh" ]]; then
+	source /opt/boxen/env.sh
+fi
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -37,7 +42,7 @@ function git_upgrade_all() {
     git submodule foreach --recursive 'git fetch origin && git checkout `git rev-parse origin/HEAD`'
 }
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH # Add RVM to PATH for scripting
 
 [ -s "/Users/ajvanerp/.scm_breeze/scm_breeze.sh" ] && source "/Users/ajvanerp/.scm_breeze/scm_breeze.sh"
 
