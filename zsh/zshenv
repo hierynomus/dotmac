@@ -104,13 +104,13 @@ fi
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
-export GRADLE_HOME=/usr/local/Cellar/gradle/1.2/
+export GRADLE_HOME=/opt/boxen/homebrew/Cellar/gradle/2.1
 export FLEX_HOME=/usr/local/Cellar/flex_sdk/4.6.0.23201/libexec
 export RUBY_HOME=/usr/local/Cellar/ruby/1.9.3-p125
 export GRADLE_OPTS="-Xms512M -Xmx2G -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512M"
 export SBT_OPTS="-Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256m"
 export CATALOG=/Users/ajvanerp/Local\ Cloud/Shared/XebiaLabs/Catalog
-export GIT_EDITOR="/Users/ajvanerp/bin/subl -n -w"
+export GIT_EDITOR="subl -n -w"
 
 export CC=gcc-4.9
 export CXX=g++-4.9

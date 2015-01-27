@@ -6,6 +6,7 @@
     ci = commit
     co = checkout
     lg = log --color --graph --pretty=format:'%Cred%h%Creset --%C(yellow)%d%Creset %s %Cgreen(%Cblue%an, %Cgreen%cr)%Creset' --abbrev-commit
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset --%C(yellow)%d%Creset %s %Cgreen(%Cblue%an, %Cgreen%cr)%Creset' --abbrev-commit --all
     lg2 = log --color --graph --pretty=format:'%Cred%h%Creset --%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset' --abbrev-commit
     ribbon = tag --force _ribbon origin/master
     catchup = log --patch --reverse --topo-order _ribbon..origin/master
@@ -21,8 +22,6 @@
 	autocrlf = input
 	editor = /Users/ajvanerp/bin/subl -n -w
 [branch "master"]
-    rebase = true
-[branch "3.8.x-maintenance"]
     rebase = true
 
 [hub]
