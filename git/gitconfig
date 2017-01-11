@@ -1,6 +1,6 @@
 [user]
-	name = hierynomus
-	email = jeroen@javadude.nl
+	name = Jeroen van Erp
+	email = jeroen@hierynomus.com
 [alias]
     st = status -s
     ci = commit
@@ -17,15 +17,8 @@
 [push]
     default = tracking
 [core]
-    excludesfile = /opt/boxen/config/git/gitignore
 	quotepath = false
 	autocrlf = input
 	editor = /Users/ajvanerp/bin/subl -n -w
 [branch "master"]
     rebase = true
-
-[hub]
-protocol = https
-
-[credential]
-helper = /opt/boxen/bin/boxen-git-credential
