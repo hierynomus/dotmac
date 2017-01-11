@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+for i in `find . -name ".git" -type d -depth 2`; do 
+    r=`dirname $i`
+    echo ">>>>>>> Pruning $r <<<<<<<<"
+    (cd $r; git remote prune origin)
+    echo "<<<<<<<<<< DONE >>>>>>>>>"
+done

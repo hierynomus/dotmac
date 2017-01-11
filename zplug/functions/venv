@@ -1,0 +1,19 @@
+#!/bin/zsh
+local home=${HOME}
+
+local DIR=$(pwd)
+
+while [[ ${DIR} != ${home} ]]; do
+    if [[ ! -e ${DIR}/.Python ]]; then
+        DIR=$(dirname ${DIR})
+    else
+        source ${DIR}/bin/activate
+        echo "Activated VirtualEnv in '${VIRTUAL_ENV##*/}'"
+        break
+    fi    
+done
+
+if [[ -z ${VIRTUAL_ENV} ]]; then
+    echo "No Virtual Env found in '$(pwd)'"
+    return 1
+fi
