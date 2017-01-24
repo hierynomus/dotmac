@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+x="$(pwd)"
+
+while [[ ! -d "${x}/.idea" && ! -e "${x}/$(basename ${x}).ipr" && ${x} != "/" ]]; do 
+    x="$(dirname "${x}")"
+done
+
+if [[ ${x} != '/' ]]; then
+    echo "Cleaning IDEA files in '${x}'"
+    (cd ${x}; rm -rf .idea **/*.ipr **/*.iml **/*.iws)
+else
+    echo "Could not find IDEA project in '${x}' or higher"
+    exit 1
+fi

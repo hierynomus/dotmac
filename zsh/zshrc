@@ -1,0 +1,55 @@
+
+
+#
+# User configuration sourced by interactive shells
+#
+if [[ ! -d ~/.zplug ]]; then
+    git clone https://github.com/zplug/zplug ~/.zplug
+    source ~/.zplug/init.zsh && zplug update --self
+fi
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv time)
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+POWERLEVEL9K_SHORTEN_DELIMITER=""
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+
+# Essential
+source ~/.zplug/init.zsh
+
+zplug "lib/completion", from:oh-my-zsh
+zplug "modules/git", from:prezto
+zplug "modules/directory", from:prezto
+zplug 'modules/osx', from:prezto
+zplug 'modules/editor', from:prezto
+zplug 'modules/terminal', from:prezto
+zplug 'modules/history', from:prezto
+zplug "modules/tmux", from:prezto
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-syntax-highlighting", defer:3
+
+
+
+zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+
+
+zplug "~/src/hierynomus/dotmac/zplug", from:local, defer:2
+
+zstyle ':prezto:module:editor' dot-expansion 'yes'
+zstyle ':prezto:*:*' case-sensitive 'no'
+zstyle ':prezto:module:terminal' auto-title 'yes'
+
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    else
+        echo
+    fi
+fi
+
+zplug load
+
+[ -s "/Users/ajvanerp/.scm_breeze/scm_breeze.sh" ] && source "/Users/ajvanerp/.scm_breeze/scm_breeze.sh"
