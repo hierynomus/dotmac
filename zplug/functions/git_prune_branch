@@ -1,0 +1,20 @@
+#!/bin/zsh
+
+if [[ ! -d '.git' ]]; then
+	echo "Sorry, not a git repository"
+	exit 1
+fi
+
+lines=("${(@f)$(git branch -vv | grep -v -i '* master')}")
+for l in $lines[@]; do
+	start=("${(s/]/)l}")
+	fields=(${(s/ /)start[1]})
+	if [ ! -z "${fields[4]}" ]; then
+		print "${fields[1]} --> ${fields[3]:1:-1} (${fields[4]})"
+		if [ "${fields[4]}" = "gone" ]; then
+			git branch -D "${fields[1]}"
+			print "Branch ${fields[1]} removed."
+		fi
+	fi
+done
+
