@@ -9,11 +9,11 @@ if [[ ! -d ~/.zplug ]]; then
 fi
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv rbenv time)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_DELIMITER=""
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
-
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=9 bg=1"
 # Essential
 source ~/.zplug/init.zsh
 
@@ -25,14 +25,13 @@ zplug 'modules/editor', from:prezto
 zplug 'modules/terminal', from:prezto
 zplug 'modules/history', from:prezto
 zplug "modules/tmux", from:prezto
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-syntax-highlighting", defer:3
 
-
+zplug "zsh-users/zsh-completions",              defer:0
+zplug "zsh-users/zsh-autosuggestions",          defer:2, on:"zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting",      defer:3, on:"zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-history-substring-search", defer:3, on:"zsh-users/zsh-syntax-highlighting"
 
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
-
 
 zplug "~/src/hierynomus/dotmac/zplug", from:local, defer:2
 
