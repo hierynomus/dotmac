@@ -1,5 +1,4 @@
 
-
 #
 # User configuration sourced by interactive shells
 #
@@ -33,6 +32,7 @@ zplug "zsh-users/zsh-history-substring-search", defer:3, on:"zsh-users/zsh-synta
 
 zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
+# zplug "~/src/hierynomus/dotmac/zplug", from:local, use:cobalt2.zsh-theme
 zplug "~/src/hierynomus/dotmac/zplug", from:local, defer:2
 
 zstyle ':prezto:module:editor' dot-expansion 'yes'

@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+cat generated/poc/$1/v3/deployit-license.lic|base64|fold -s -w72|pbcopy

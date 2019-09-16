@@ -1,0 +1,32 @@
+#!/bin/zsh
+
+parse_yaml() {
+   local prefix=$2
+   local s='[[:space:]]*' w='[a-zA-Z0-9_]*' fs=$(echo @|tr @ '\034')
+   sed -ne "s|^\($s\)\($w\)$s:$s\"\(.*\)\"$s\$|\1$fs\2$fs\3|p" \
+        -e "s|^\($s\)\($w\)$s:$s\(.*\)$s\$|\1$fs\2$fs\3|p"  $1 |
+   awk -F$fs '{
+      indent = length($1)/2;
+      vname[indent] = $2;
+      for (i in vname) {if (i > indent) {delete vname[i]}}
+      if (length($3) > 0) {
+         vn=""; for (i=0; i<indent; i++) {vn=(vn)(vname[i])("_")}
+         printf("%s%s%s=\"%s\"\n", "'$prefix'",vn, $2, $3);
+      }
+   }'
+}
+eval $(parse_yaml ~/.openconnect/conf.yml "vpn_")
+
+VPN_HOST=${(P)$(echo "vpn_$1_host")}
+VPN_USER=${(P)$(echo "vpn_$1_user")}
+VPN_PASSWORD=$(echo ${(P)$(echo "vpn_$1_password")} | base64 -D)
+VPN_AUTHGROUP=${(P)$(echo "vpn_$1_authgroup")}
+
+echo "Connect to VPN on $VPN_HOST"
+echo $VPN_PASSWORD | sudo openconnect \
+        --background \
+        --pid-file="$HOME/.openconnect.pid" \
+        --user=$VPN_USER \
+        --authgroup=$VPN_AUTHGROUP $VPN_HOST \
+        --passwd-on-stdin
+echo "Connected"

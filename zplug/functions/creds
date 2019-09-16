@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+python creds.py $1 | pbcopy
