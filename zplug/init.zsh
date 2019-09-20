@@ -47,4 +47,6 @@ fi
 # chpwd_functions+=(zsh-pipenv-shell-activate)
 
 # enable pipenv tab completion
-eval "$(pipenv --completion)"
+if which pipenv > /dev/null; then
+  eval "$(pipenv --completion)"
+fi

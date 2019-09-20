@@ -1,4 +1,0 @@
-#!/bin/zsh
-
-scp -r -o "ProxyCommand ssh jenkins-ng -W %h:%p" generated/license/$1 xldown@dist.xebialabs.com:/var/www/dist.xebialabs.com/customer/licenses
-

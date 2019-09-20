@@ -1,3 +1,0 @@
-#!/bin/zsh
-
-scp -r generated/license/$1 xldown:/var/www/dist.xebialabs.com/customer/licenses

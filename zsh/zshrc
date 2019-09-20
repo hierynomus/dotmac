@@ -12,7 +12,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(virtualenv rbenv time)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 POWERLEVEL9K_SHORTEN_DELIMITER=""
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=9 bg=1"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=black,bold"
 # Essential
 source ~/.zplug/init.zsh
 
@@ -30,7 +30,8 @@ zplug "zsh-users/zsh-autosuggestions",          defer:2, on:"zsh-users/zsh-compl
 zplug "zsh-users/zsh-syntax-highlighting",      defer:3, on:"zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search", defer:3, on:"zsh-users/zsh-syntax-highlighting"
 
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
+zplug romkatv/powerlevel10k, use:powerlevel10k.zsh-theme
+#zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
 
 # zplug "~/src/hierynomus/dotmac/zplug", from:local, use:cobalt2.zsh-theme
 zplug "~/src/hierynomus/dotmac/zplug", from:local, defer:2
@@ -51,4 +52,11 @@ fi
 
 zplug load
 
-[ -s "/Users/ajvanerp/.scm_breeze/scm_breeze.sh" ] && source "/Users/ajvanerp/.scm_breeze/scm_breeze.sh"
+[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh

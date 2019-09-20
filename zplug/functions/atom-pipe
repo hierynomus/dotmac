@@ -1,6 +1,0 @@
-#!/bin/zsh
-
-ATOM_TEMP=$(mktemp /tmp/atom.XXXX)
-cat >> $ATOM_TEMP
-atom --wait $ATOM_TEMP
-rm $ATOM_TEMP
