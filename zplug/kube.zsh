@@ -6,5 +6,11 @@ function db() {
     else
         CONTEXT=$1
     fi
-    docker build $CONTEXT
+
+    if [ -z $2 ]; then
+        TAG="$(basename $(pwd))"
+    else
+        TAG=$2
+    fi
+    docker build ${CONTEXT} -t ${TAG}
 }

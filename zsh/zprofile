@@ -5,6 +5,7 @@ if [ -x /usr/libexec/path_helper ]; then
 fi
 
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH=$PATH:$(go env GOPATH)/bin
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 # if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
