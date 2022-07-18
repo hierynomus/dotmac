@@ -5,7 +5,10 @@ if [[ ! -d '.git' ]]; then
 	exit 1
 fi
 
-lines=("${(@f)$(git branch -vv | grep -v -i '* master')}")
+print "Updating repository"
+git fetch --all
+
+lines=("${(@f)$(git branch -vv | grep -i '\[origin' | grep -v -i '* master')}")
 for l in $lines[@]; do
 	start=("${(s/]/)l}")
 	fields=(${(s/ /)start[1]})

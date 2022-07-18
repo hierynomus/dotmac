@@ -1,7 +1,14 @@
 #!/bin/zsh
-for i in `find . -name ".git" -type d -depth 2`; do
-    r=`dirname $i`
-    echo "\x1b[31m>>>>>>> Updating $r <<<<<<<<\x1b[0m"
-    (cd $r; git-up)
-    echo "\x1b[32m<<<<<<<<<< DONE >>>>>>>>>\x1b[0m"
+
+for i in $(find . -name ".git" -type d -depth 2); do
+    r="$(dirname "$i")"
+    echo "\x1b[33m>>>>>>> Updating $r <<<<<<<<\x1b[0m"
+    (cd "$r" && git-up)
+    EC=$?
+    if [ $EC -eq 0 ]; then
+        echo "\x1b[32m<<<<<<<<<< DONE >>>>>>>>>\x1b[0m"
+    else
+        echo "\x1b[31m<<<<<<<<< FAILED >>>>>>>>\x1b[0m"
+        break
+    fi
 done

@@ -1,8 +1,11 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export GITLAB_PAT=csH8Szft8dzDsBfusSMZ
 
 
 # STACKSTATE Settings
 export NODE_OPTIONS=--max_old_space_size=4096
 export SBT_OPTS="-Dfile.encoding=UTF8 -Xmx4G -XX:ReservedCodeCacheSize=128m -XX:+UseG1GC"
+
+# EDITOR Settings
+export EDITOR="code -n -w"
+export VISUAL="code -n -w"
