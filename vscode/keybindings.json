@@ -1,53 +1,150 @@
-// Place your key bindings in this file to overwrite the defaultsauto[]
+// Place your key bindings in this file to override the defaultsauto[]
 [
-    {
-        "key": "ctrl+delete",
-        "command": "workbench.action.terminal.deleteWordRight",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "alt+delete",
-        "command": "-workbench.action.terminal.deleteWordRight",
-        "when": "terminalFocus"
-    },
-    {
-        "key": "ctrl+delete",
-        "command": "deleteWordRight",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "alt+delete",
-        "command": "-deleteWordRight",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "alt+delete",
-        "command": "extension.deleteCamelRightCommand",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+delete",
-        "command": "-extension.deleteCamelRightCommand",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+alt+delete",
-        "command": "deleteRight",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+delete",
-        "command": "-deleteRight",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "alt+backspace",
-        "command": "extension.deleteCamelLeftCommand",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+backspace",
-        "command": "-extension.deleteCamelLeftCommand",
-        "when": "editorTextFocus"
-    }
+  {
+    "key": "shift+cmd+v",
+    "command": "clipboard-manager.editor.pickAndPaste",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "-clipboard-manager.editor.pickAndPaste",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "asciidoc.showPreview",
+    "when": "editorLangId == 'asciidoc'"
+  },
+  {
+    "key": "shift+cmd+v",
+    "command": "-asciidoc.showPreview",
+    "when": "editorLangId == 'asciidoc'"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "markdown.showPreview",
+    "when": "editorLangId == 'markdown'"
+  },
+  {
+    "key": "shift+cmd+v",
+    "command": "-markdown.showPreview",
+    "when": "editorLangId == 'markdown'"
+  },
+  {
+    "key": "alt+left",
+    "command": "-cursorWordStartLeft",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+left",
+    "command": "cursorWordPartLeft",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+alt+left",
+    "command": "-cursorWordPartLeft",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+right",
+    "command": "cursorWordPartRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+alt+right",
+    "command": "-cursorWordPartRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+backspace",
+    "command": "deleteWordPartLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+alt+backspace",
+    "command": "-deleteWordPartLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+backspace",
+    "command": "-deleteWordLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+cmd+i",
+    "command": "go.import.add",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "shift+cmd+w",
+    "command": "-workbench.action.closeWindow"
+  },
+  {
+    "key": "cmd+w",
+    "command": "-workbench.action.closeWindow",
+    "when": "!editorIsOpen && !multipleEditorGroups"
+  },
+  {
+    "key": "shift+cmd+w",
+    "command": "workbench.action.closeAllEditors"
+  },
+  {
+    "key": "cmd+k cmd+w",
+    "command": "-workbench.action.closeAllEditors"
+  },
+  {
+    "key": "ctrl+alt+right",
+    "command": "cursorWordEndRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+right",
+    "command": "-cursorWordEndRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+right",
+    "command": "cursorWordEndRightSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+right",
+    "command": "-cursorWordEndRightSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+left",
+    "command": "cursorWordPartLeftSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+left",
+    "command": "-cursorWordPartLeftSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+right",
+    "command": "cursorWordPartRightSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+right",
+    "command": "-cursorWordPartRightSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+left",
+    "command": "cursorWordStartLeftSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+left",
+    "command": "-cursorWordStartLeftSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+cmd+w",
+    "command": "workbench.action.closeWindow",
+    "when": "!editorIsOpen"
+  }
 ]
